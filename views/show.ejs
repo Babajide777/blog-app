@@ -1,0 +1,43 @@
+<%- include("partials/header") %>
+
+<div class="container border border-secondary d-flex flex-column" style="margin-top: 100px; width: 70%;">
+    <div class="row text-center align-self-center">
+        <h2><%= foundblog.name; %></h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 align-self-center">
+            <img src="<%= foundblog.image%>" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+
+    <div class="row text-center align-self-center">
+        <p> <%= foundblog.dateCreated%> </p>
+    </div>
+
+    <div class="row text-center align-self-center">
+        <p><strong><%= foundblog.body; %></strong></p>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button type="button" class="btn btn-secondary"><a href="/blogs"><strong>Go back</strong></a></button>
+            
+        </div>
+        <div class="col-6">
+            
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn btn-secondary"><a href="/blogs/<%= foundblog._id %>/edit"><strong>Edit</strong></a></button>
+                        
+        </div>
+                
+    </div>
+    
+    <form action="/blogs/<%= foundblog._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger" type="submit">Delete</button>
+        
+    </form>
+
+</div>
+
+<%- include("partials/footer") %>
